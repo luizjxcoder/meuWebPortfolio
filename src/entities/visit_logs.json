@@ -1,0 +1,65 @@
+
+{
+  "name": "visit_logs",
+  "options": {
+    "validator": {
+      "$jsonSchema": {
+        "bsonType": "object",
+        "required": ["page_path", "visit_time", "session_id"],
+        "properties": {
+          "page_path": {
+            "bsonType": "string",
+            "description": "访问的页面路径"
+          },
+          "page_title": {
+            "bsonType": "string",
+            "description": "页面标题"
+          },
+          "visit_time": {
+            "bsonType": "string",
+            "title": "datetime",
+            "description": "访问时间 ISO 8601格式"
+          },
+          "session_id": {
+            "bsonType": "string",
+            "description": "用户会话ID"
+          },
+          "user_agent": {
+            "bsonType": "string",
+            "description": "用户浏览器信息"
+          },
+          "referrer": {
+            "bsonType": "string",
+            "description": "来源页面"
+          },
+          "ip_address": {
+            "bsonType": "string",
+            "description": "访问者IP地址"
+          },
+          "duration": {
+            "bsonType": "int",
+            "minimum": 0,
+            "description": "页面停留时间（秒）"
+          },
+          "creator": {
+            "bsonType": "string",
+            "description": "记录创建者"
+          },
+          "createdAt": {
+            "bsonType": "string",
+            "title": "datetime",
+            "description": "记录创建时间"
+          },
+          "updatedAt": {
+            "bsonType": "string",
+            "title": "datetime",
+            "description": "记录更新时间"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "validationLevel": "moderate",
+    "validationAction": "warn"
+  }
+}
