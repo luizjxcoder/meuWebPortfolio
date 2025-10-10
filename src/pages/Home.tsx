@@ -1,5 +1,5 @@
 
-    import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {Calendar, Clock, ArrowRight, Code, Award, Heart, Users, Star, MapPin, Phone, Mail, Send, User, MessageSquare, Globe} from 'lucide-react';
@@ -40,7 +40,7 @@ const Home: React.FC = () => {
       formDataToSend.append('_captcha', 'false');
       formDataToSend.append('_template', 'table');
 
-      const response = await fetch('https://formsubmit.co/jxcpder.dev@gmail.com', {
+      const response = await fetch('https://formsubmit.co/jxcoder.dev@gmail.com', {
         method: 'POST',
         body: formDataToSend
       });
