@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -13,11 +12,10 @@ import Contact from './pages/Contact';
 import { useVisitTracker } from './hooks/useVisitTracker';
 import { useScrollToTop } from './hooks/useScrollToTop';
 
-// 访问跟踪包装组件
 const AppWithTracking: React.FC = () => {
-  useVisitTracker(); // 启用访问跟踪
-  useScrollToTop(); // 确保页面始终从顶部开始
-  
+  useVisitTracker();
+  useScrollToTop();
+
   return (
     <div className="min-h-screen transition-colors duration-300" style={{ backgroundColor: 'var(--bg-color)' }}>
       <Header />
@@ -38,11 +36,7 @@ const AppWithTracking: React.FC = () => {
 };
 
 function App() {
-  return (
-    <Router>
-      <AppWithTracking />
-    </Router>
-  );
+  return <AppWithTracking />;
 }
 
-export default App;
+export default App; // ✅ ESSENCIAL
