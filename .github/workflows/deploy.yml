@@ -3,14 +3,14 @@ name: Deploy Vite + React to GitHub Pages
 on:
   push:
     branches:
-      - main  # dispara o deploy sempre que você fizer push no main
+      - main   # dispara o deploy sempre que houver push no branch main
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout código
         uses: actions/checkout@v3
 
       - name: Setup Node.js
@@ -18,17 +18,23 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Install dependencies
+      - name: Cache de dependências
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Instalar dependências
         run: npm ci
 
-      - name: Build project
+      - name: Build do projeto
         run: npm run build
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Deploy para GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3   # ✅ versão correta
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-          publish_branch: gh-pages   # 👈 ESSENCIAL
-
-          
+          publish_dir: ./dist                 # pasta de saída do Vite
+          publish_branch: gh-pages            # branch que vai ser publicado
