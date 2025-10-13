@@ -9,6 +9,7 @@ const BlogPost: React.FC = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
+<<<<<<< HEAD
   const blogPosts = {
     '1': {
       id: 1,
@@ -128,13 +129,95 @@ const BlogPost: React.FC = () => {
         photos: "Fintech Platform",
         equipment: "Vue.js, Python, TensorFlow, PostgreSQL",
         style: "Controle Financeiro"
+=======
+  const projectsData = {
+    '1': {
+      id: 1,
+      title: "E-commerce TechStore",
+      category: "ecommerce",
+      categoryName: "E-commerce",
+      image: "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      date: "2025-01-15",
+      location: "São Paulo, SP",
+      description: "Plataforma completa de e-commerce com design responsivo e UX otimizada para conversão.",
+      fullDescription: "Este projeto de e-commerce foi desenvolvido com foco na experiência do usuário e performance. Implementamos um sistema completo de carrinho de compras, integração com gateways de pagamento, painel administrativo e sistema de avaliações. A plataforma utiliza tecnologias modernas como React, Node.js e MongoDB, garantindo escalabilidade e segurança. O design responsivo adapta-se perfeitamente a todos os dispositivos, proporcionando uma experiência de compra fluida e intuitiva.",
+      views: 1240,
+      likes: 89,
+      projectUrl: "https://techstore-ecommerce.com",
+      gallery: [
+        "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "https://images.pexels.com/photos/270408/pexels-photo-270408.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=1200"
+      ],
+      details: {
+        duration: "3 meses",
+        photos: "Frontend + Backend",
+        equipment: "React, Node.js, MongoDB",
+        style: "E-commerce Responsivo"
+      }
+    },
+    '2': {
+      id: 2,
+      title: "Dashboard Analytics Pro",
+      category: "webapp",
+      categoryName: "Web App",
+      image: "https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      date: "2025-01-12",
+      location: "Rio de Janeiro, RJ",
+      description: "Interface moderna para dashboard de analytics com visualização de dados em tempo real.",
+      fullDescription: "Uma aplicação web sofisticada para análise de dados empresariais com gráficos interativos, relatórios em tempo real e integração com múltiplas fontes de dados. O projeto inclui autenticação de usuários, diferentes níveis de acesso, exportação de relatórios e sistema de notificações. Utilizamos D3.js para visualizações customizadas e implementamos um backend robusto para processamento de grandes volumes de dados, oferecendo insights valiosos para tomada de decisões estratégicas.",
+      views: 856,
+      likes: 67,
+      projectUrl: "https://dataviz-pro.com",
+      gallery: [
+        "https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "https://images.pexels.com/photos/669610/pexels-photo-669610.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=1200"
+      ],
+      details: {
+        duration: "4 meses",
+        photos: "Full Stack",
+        equipment: "React, D3.js, Python, PostgreSQL",
+        style: "Analytics Dashboard"
+      }
+    },
+    '3': {
+      id: 3,
+      title: "Portal Corporativo TechCorp",
+      category: "corporate",
+      categoryName: "Corporativo",
+      image: "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      date: "2025-01-10",
+      location: "Belo Horizonte, MG",
+      description: "Website institucional com design system completo e experiência de usuário premium.",
+      fullDescription: "Desenvolvemos um portal corporativo completo para a TechCorp, incluindo design responsivo, sistema de gerenciamento de conteúdo personalizado, área restrita para funcionários e integração com sistemas internos. O projeto contemplou a criação de uma identidade visual digital consistente, otimização para motores de busca, sistema de newsletter e módulos de recursos humanos. A arquitetura foi pensada para escalabilidade e facilidade de manutenção, proporcionando uma presença digital profissional e moderna.",
+      views: 743,
+      likes: 92,
+      projectUrl: "https://techcorp-portal.com",
+      gallery: [
+        "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "https://images.pexels.com/photos/270408/pexels-photo-270408.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=1200"
+      ],
+      details: {
+        duration: "2 meses",
+        photos: "Frontend + CMS",
+        equipment: "React, Strapi, Node.js",
+        style: "Website Corporativo"
+>>>>>>> 918ebc107262a6a93d8d76b9a472dc214ac01bf8
       }
     }
   };
 
+<<<<<<< HEAD
   const post = blogPosts[id as keyof typeof blogPosts];
 
   if (!post) {
+=======
+  const project = projectsData[id as keyof typeof projectsData];
+
+  if (!project) {
+>>>>>>> 918ebc107262a6a93d8d76b9a472dc214ac01bf8
     return (
       <div className="min-h-screen flex items-center justify-center bg-[#EBF1FC]">
         <div className="text-center">
@@ -142,17 +225,28 @@ const BlogPost: React.FC = () => {
             Projeto não encontrado
           </h1>
           <Link 
+<<<<<<< HEAD
             to="/#recent-projects" 
             className="neu-button px-6 py-3 text-gray-700"
           >
             Voltar aos Projetos Recentes
+=======
+            to="/" 
+            className="neu-button px-6 py-3 text-gray-700"
+          >
+            Voltar ao Início
+>>>>>>> 918ebc107262a6a93d8d76b9a472dc214ac01bf8
           </Link>
         </div>
       </div>
     );
   }
 
+<<<<<<< HEAD
   const allImages = [post.image, ...post.gallery];
+=======
+  const allImages = [project.image, ...project.gallery];
+>>>>>>> 918ebc107262a6a93d8d76b9a472dc214ac01bf8
 
   const openImageModal = (imageUrl: string, index: number) => {
     setSelectedImage(imageUrl);
@@ -183,6 +277,14 @@ const BlogPost: React.FC = () => {
     } else if (e.key === 'ArrowLeft') {
       prevImage();
     }
+<<<<<<< HEAD
+=======
+  };
+
+  const scrollToContactForm = () => {
+    // Redirecionar para a página inicial com foco no formulário
+    window.location.href = '/#contact-form';
+>>>>>>> 918ebc107262a6a93d8d76b9a472dc214ac01bf8
   };
 
   return (
@@ -196,17 +298,28 @@ const BlogPost: React.FC = () => {
           className="flex items-center space-x-4 mb-8"
         >
           <Link
+<<<<<<< HEAD
             to="/#recent-projects"
+=======
+            to="/"
+>>>>>>> 918ebc107262a6a93d8d76b9a472dc214ac01bf8
             className="neu-button p-3 text-gray-700 hover:text-gray-900"
           >
             <ArrowLeft className="w-5 h-5" />
           </Link>
           <div>
             <span className="neu-button px-3 py-1 text-sm font-medium mb-2 inline-block text-gray-600">
+<<<<<<< HEAD
               {post.category}
             </span>
             <h1 className="text-4xl font-bold text-gray-700">
               {post.title}
+=======
+              {project.categoryName}
+            </span>
+            <h1 className="text-4xl font-bold text-gray-700">
+              {project.title}
+>>>>>>> 918ebc107262a6a93d8d76b9a472dc214ac01bf8
             </h1>
           </div>
         </motion.div>
@@ -222,18 +335,30 @@ const BlogPost: React.FC = () => {
             {/* Main Image */}
             <div 
               className="neu-card overflow-hidden mb-6 cursor-pointer bg-[#EBF1FC]"
+<<<<<<< HEAD
               onClick={() => openImageModal(post.image, 0)}
             >
               <img
                 src={post.image}
                 alt={post.title}
+=======
+              onClick={() => openImageModal(project.image, 0)}
+            >
+              <img
+                src={project.image}
+                alt={project.title}
+>>>>>>> 918ebc107262a6a93d8d76b9a472dc214ac01bf8
                 className="w-full h-96 object-cover hover:scale-105 transition-transform duration-300"
               />
             </div>
 
             {/* Gallery */}
             <div className="grid grid-cols-3 gap-4">
+<<<<<<< HEAD
               {post.gallery.map((image, index) => (
+=======
+              {project.gallery.map((image, index) => (
+>>>>>>> 918ebc107262a6a93d8d76b9a472dc214ac01bf8
                 <motion.div
                   key={index}
                   whileHover={{ scale: 1.05 }}
@@ -242,7 +367,11 @@ const BlogPost: React.FC = () => {
                 >
                   <img
                     src={image}
+<<<<<<< HEAD
                     alt={`${post.title} - ${index + 1}`}
+=======
+                    alt={`${project.title} - ${index + 1}`}
+>>>>>>> 918ebc107262a6a93d8d76b9a472dc214ac01bf8
                     className="w-full h-24 object-cover hover:scale-110 transition-transform duration-300"
                   />
                 </motion.div>
@@ -262,27 +391,47 @@ const BlogPost: React.FC = () => {
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center text-gray-600">
                   <Calendar className="w-4 h-4 mr-2" />
+<<<<<<< HEAD
                   {new Date(post.date).toLocaleDateString('pt-BR')}
                 </div>
                 <div className="flex items-center text-gray-600">
                   <MapPin className="w-4 h-4 mr-2" />
                   {post.location}
+=======
+                  {new Date(project.date).toLocaleDateString('pt-BR')}
+                </div>
+                <div className="flex items-center text-gray-600">
+                  <MapPin className="w-4 h-4 mr-2" />
+                  {project.location}
+>>>>>>> 918ebc107262a6a93d8d76b9a472dc214ac01bf8
                 </div>
               </div>
 
               <div className="flex items-center space-x-6 mb-6">
                 <div className="flex items-center text-gray-600">
                   <Eye className="w-4 h-4 mr-2" />
+<<<<<<< HEAD
                   {post.views.toLocaleString()} visualizações
                 </div>
                 <div className="flex items-center text-gray-600">
                   <Heart className="w-4 h-4 mr-2" />
                   {post.likes} likes
+=======
+                  {project.views.toLocaleString()} visualizações
+                </div>
+                <div className="flex items-center text-gray-600">
+                  <Heart className="w-4 h-4 mr-2" />
+                  {project.likes} likes
+>>>>>>> 918ebc107262a6a93d8d76b9a472dc214ac01bf8
                 </div>
               </div>
 
               <p className="leading-relaxed text-gray-700">
+<<<<<<< HEAD
                 {post.fullDescription}
+=======
+                {project.fullDescription}
+>>>>>>> 918ebc107262a6a93d8d76b9a472dc214ac01bf8
               </p>
             </div>
 
@@ -295,25 +444,41 @@ const BlogPost: React.FC = () => {
                 <div className="flex justify-between">
                   <span className="text-gray-600">Duração:</span>
                   <span className="font-semibold text-gray-700">
+<<<<<<< HEAD
                     {post.details.duration}
+=======
+                    {project.details.duration}
+>>>>>>> 918ebc107262a6a93d8d76b9a472dc214ac01bf8
                   </span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-gray-600">Tipo:</span>
                   <span className="font-semibold text-gray-700">
+<<<<<<< HEAD
                     {post.details.photos}
+=======
+                    {project.details.photos}
+>>>>>>> 918ebc107262a6a93d8d76b9a472dc214ac01bf8
                   </span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-gray-600">Tecnologias:</span>
                   <span className="font-semibold text-gray-700">
+<<<<<<< HEAD
                     {post.details.equipment}
+=======
+                    {project.details.equipment}
+>>>>>>> 918ebc107262a6a93d8d76b9a472dc214ac01bf8
                   </span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-gray-600">Categoria:</span>
                   <span className="font-semibold text-gray-700">
+<<<<<<< HEAD
                     {post.details.style}
+=======
+                    {project.details.style}
+>>>>>>> 918ebc107262a6a93d8d76b9a472dc214ac01bf8
                   </span>
                 </div>
               </div>
@@ -321,7 +486,11 @@ const BlogPost: React.FC = () => {
 
             {/* Ver Projeto Online Button */}
             <motion.a
+<<<<<<< HEAD
               href={post.projectUrl}
+=======
+              href={project.projectUrl}
+>>>>>>> 918ebc107262a6a93d8d76b9a472dc214ac01bf8
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
@@ -334,15 +503,24 @@ const BlogPost: React.FC = () => {
 
             {/* Action Buttons */}
             <div className="space-y-3">
+<<<<<<< HEAD
               <motion.a
                 href="/#contact"
+=======
+              <motion.button
+                onClick={scrollToContactForm}
+>>>>>>> 918ebc107262a6a93d8d76b9a472dc214ac01bf8
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="neu-button w-full py-4 font-semibold flex items-center justify-center space-x-2 text-gray-700"
               >
                 <Camera className="w-5 h-5" />
                 <span>Solicitar Orçamento</span>
+<<<<<<< HEAD
               </motion.a>
+=======
+              </motion.button>
+>>>>>>> 918ebc107262a6a93d8d76b9a472dc214ac01bf8
             </div>
           </motion.div>
         </div>
@@ -359,6 +537,7 @@ const BlogPost: React.FC = () => {
             Projetos Relacionados
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+<<<<<<< HEAD
             {Object.values(blogPosts)
               .filter(p => p.category === post.category && p.id !== post.id)
               .slice(0, 3)
@@ -373,15 +552,38 @@ const BlogPost: React.FC = () => {
                       <img
                         src={relatedPost.image}
                         alt={relatedPost.title}
+=======
+            {Object.values(projectsData)
+              .filter(p => p.category === project.category && p.id !== project.id)
+              .slice(0, 3)
+              .map((relatedProject) => (
+                <motion.div
+                  key={relatedProject.id}
+                  whileHover={{ scale: 1.02 }}
+                  className="neu-card overflow-hidden group bg-[#EBF1FC]"
+                >
+                  <Link to={`/post/${relatedProject.id}`}>
+                    <div className="relative h-48 overflow-hidden">
+                      <img
+                        src={relatedProject.image}
+                        alt={relatedProject.title}
+>>>>>>> 918ebc107262a6a93d8d76b9a472dc214ac01bf8
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                       />
                     </div>
                     <div className="p-4">
                       <h3 className="font-bold mb-2 text-gray-700">
+<<<<<<< HEAD
                         {relatedPost.title}
                       </h3>
                       <p className="text-sm text-gray-600">
                         {relatedPost.description}
+=======
+                        {relatedProject.title}
+                      </h3>
+                      <p className="text-sm text-gray-600">
+                        {relatedProject.description}
+>>>>>>> 918ebc107262a6a93d8d76b9a472dc214ac01bf8
                       </p>
                     </div>
                   </Link>
@@ -407,6 +609,10 @@ const BlogPost: React.FC = () => {
               {/* Close Button */}
               <motion.button
                 whileHover={{ scale: 1.1 }}
+<<<<<<< HEAD
+=======
+                whileTap={{ scale: 0.9 }}
+>>>>>>> 918ebc107262a6a93d8d76b9a472dc214ac01bf8
                 onClick={closeImageModal}
                 className="absolute top-4 right-4 z-10 neu-button p-3 text-gray-700 bg-white bg-opacity-90"
               >
@@ -418,6 +624,10 @@ const BlogPost: React.FC = () => {
                 <>
                   <motion.button
                     whileHover={{ scale: 1.1 }}
+<<<<<<< HEAD
+=======
+                    whileTap={{ scale: 0.9 }}
+>>>>>>> 918ebc107262a6a93d8d76b9a472dc214ac01bf8
                     onClick={(e) => {
                       e.stopPropagation();
                       prevImage();
@@ -429,6 +639,10 @@ const BlogPost: React.FC = () => {
 
                   <motion.button
                     whileHover={{ scale: 1.1 }}
+<<<<<<< HEAD
+=======
+                    whileTap={{ scale: 0.9 }}
+>>>>>>> 918ebc107262a6a93d8d76b9a472dc214ac01bf8
                     onClick={(e) => {
                       e.stopPropagation();
                       nextImage();
@@ -446,7 +660,11 @@ const BlogPost: React.FC = () => {
                 animate={{ scale: 1, opacity: 1 }}
                 exit={{ scale: 0.8, opacity: 0 }}
                 src={selectedImage}
+<<<<<<< HEAD
                 alt={post.title}
+=======
+                alt={project.title}
+>>>>>>> 918ebc107262a6a93d8d76b9a472dc214ac01bf8
                 className="max-w-full max-h-full object-contain rounded-lg shadow-2xl"
                 onClick={(e) => e.stopPropagation()}
               />
