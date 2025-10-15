@@ -456,7 +456,7 @@ const Home: React.FC = () => {
                     <div
                          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
                          style={{
-                              backgroundImage: "url('/meuWebPortfolio/images/IMG1.png')"
+                              backgroundImage: "url('/meuWebPortfolio/images/IMG5.png')"
                          }}
                     >
                          <div className="absolute inset-0 bg-black/40"></div>
