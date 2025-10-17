@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Calendar, Clock, ArrowRight, Code, Award, Heart, Users, Star, MapPin, Phone, Mail, Send, User, MessageSquare, Globe } from 'lucide-react';
+import { Calendar, Clock, ArrowRight, Code, Award, Heart, Users, Star, MapPin, Phone, Mail, Send, User, MessageSquare, Globe, ChevronLeft, ChevronRight, X } from 'lucide-react';
 
 const Home: React.FC = () => {
      const [formData, setFormData] = useState({
@@ -40,7 +40,7 @@ const Home: React.FC = () => {
                formDataToSend.append('_captcha', 'false');
                formDataToSend.append('_template', 'table');
 
-               const response = await fetch('https://formsubmit.co/jxcoder.dev@gmail.com', {
+               const response = await fetch('https://formsubmit.co/jxcpder.dev@gmail.com', {
                     method: 'POST',
                     body: formDataToSend
                });
@@ -82,6 +82,11 @@ const Home: React.FC = () => {
                category: "ecommerce",
                categoryName: "E-commerce",
                image: "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800",
+               images: [
+                    "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=1200",
+                    "https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=1200",
+                    "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=1200"
+               ],
                date: "2025-01-15",
                location: "São Paulo, SP",
                description: "Plataforma completa de e-commerce com design responsivo e UX otimizada para conversão."
@@ -92,6 +97,11 @@ const Home: React.FC = () => {
                category: "webapp",
                categoryName: "Web App",
                image: "https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=800",
+               images: [
+                    "https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=1200",
+                    "https://images.pexels.com/photos/574077/pexels-photo-574077.jpeg?auto=compress&cs=tinysrgb&w=1200",
+                    "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=1200"
+               ],
                date: "2025-01-12",
                location: "Rio de Janeiro, RJ",
                description: "Interface moderna para dashboard de analytics com visualização de dados em tempo real."
@@ -102,160 +112,14 @@ const Home: React.FC = () => {
                category: "corporate",
                categoryName: "Corporativo",
                image: "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=800",
+               images: [
+                    "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=1200",
+                    "https://images.pexels.com/photos/265667/pexels-photo-265667.jpeg?auto=compress&cs=tinysrgb&w=1200",
+                    "https://images.pexels.com/photos/574070/pexels-photo-574070.jpeg?auto=compress&cs=tinysrgb&w=1200"
+               ],
                date: "2025-01-10",
                location: "Belo Horizonte, MG",
                description: "Website institucional com design system completo e experiência de usuário premium."
-          },
-          {
-               id: 4,
-               title: "App Mobile FinanceTracker",
-               category: "mobile",
-               categoryName: "Mobile Design",
-               image: "https://images.pexels.com/photos/607812/pexels-photo-607812.jpeg?auto=compress&cs=tinysrgb&w=800",
-               date: "2024-12-20",
-               location: "Brasília, DF",
-               description: "Design de interface para aplicativo de controle financeiro com foco em usabilidade."
-          },
-          {
-               id: 5,
-               title: "Landing Page SaaS Premium",
-               category: "landing",
-               categoryName: "Landing Page",
-               image: "https://images.pexels.com/photos/574071/pexels-photo-574071.jpeg?auto=compress&cs=tinysrgb&w=800",
-               date: "2024-12-15",
-               location: "São Paulo, SP",
-               description: "Landing page de alta conversão para produto SaaS com design moderno e responsivo."
-          },
-          {
-               id: 6,
-               title: "Design System ComponentLib",
-               category: "designsystem",
-               categoryName: "Design System",
-               image: "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=800",
-               date: "2024-12-08",
-               location: "Mantiqueira, MG",
-               description: "Sistema de design completo com componentes reutilizáveis e documentação detalhada."
-          },
-          {
-               id: 7,
-               title: "Marketplace Digital Arts",
-               category: "ecommerce",
-               categoryName: "E-commerce",
-               image: "https://images.pexels.com/photos/270360/pexels-photo-270360.jpeg?auto=compress&cs=tinysrgb&w=800",
-               date: "2024-11-25",
-               location: "Florianópolis, SC",
-               description: "Marketplace para artistas digitais com sistema de pagamento integrado e UX intuitiva."
-          },
-          {
-               id: 8,
-               title: "Plataforma EduTech Learning",
-               category: "webapp",
-               categoryName: "Web App",
-               image: "https://images.pexels.com/photos/1181676/pexels-photo-1181676.jpeg?auto=compress&cs=tinysrgb&w=800",
-               date: "2024-11-18",
-               location: "São Paulo, SP",
-               description: "Aplicação web para educação online com interface gamificada e design centrado no usuário."
-          },
-          {
-               id: 9,
-               title: "Website StartupTech",
-               category: "corporate",
-               categoryName: "Corporativo",
-               image: "https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=800",
-               date: "2024-11-10",
-               location: "São Paulo, SP",
-               description: "Site institucional para startup de tecnologia com animações modernas e design inovador."
-          },
-          {
-               id: 10,
-               title: "App Delivery UberEats Style",
-               category: "mobile",
-               categoryName: "Mobile Design",
-               image: "https://images.pexels.com/photos/4393021/pexels-photo-4393021.jpeg?auto=compress&cs=tinysrgb&w=800",
-               date: "2024-11-05",
-               location: "Curitiba, PR",
-               description: "Interface mobile para app de delivery com foco na experiência do usuário e conversão."
-          },
-          {
-               id: 11,
-               title: "Landing Page Produto Digital",
-               category: "landing",
-               categoryName: "Landing Page",
-               image: "https://images.pexels.com/photos/265667/pexels-photo-265667.jpeg?auto=compress&cs=tinysrgb&w=800",
-               date: "2024-10-28",
-               location: "Salvador, BA",
-               description: "Landing page otimizada para conversão de produto digital com A/B testing implementado."
-          },
-          {
-               id: 12,
-               title: "UI Kit ModernDesign",
-               category: "designsystem",
-               categoryName: "Design System",
-               image: "https://images.pexels.com/photos/3861458/pexels-photo-3861458.jpeg?auto=compress&cs=tinysrgb&w=800",
-               date: "2024-10-20",
-               location: "Chapada Diamantina, BA",
-               description: "Kit de interface completo com componentes modernos e guidelines de usabilidade."
-          },
-          // Projetos adicionais para representar o portfólio completo
-          {
-               id: 13,
-               title: "E-commerce Fashion Store",
-               category: "ecommerce",
-               categoryName: "E-commerce",
-               image: "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800",
-               date: "2024-10-15",
-               location: "Rio de Janeiro, RJ",
-               description: "Loja virtual de moda com catálogo interativo e checkout otimizado."
-          },
-          {
-               id: 14,
-               title: "Portal Educacional UniTech",
-               category: "corporate",
-               categoryName: "Corporativo",
-               image: "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=800",
-               date: "2024-10-10",
-               location: "Brasília, DF",
-               description: "Website institucional para universidade com portal do aluno integrado."
-          },
-          {
-               id: 15,
-               title: "Landing Page Curso Online",
-               category: "landing",
-               categoryName: "Landing Page",
-               image: "https://images.pexels.com/photos/265667/pexels-photo-265667.jpeg?auto=compress&cs=tinysrgb&w=800",
-               date: "2024-10-05",
-               location: "São Paulo, SP",
-               description: "Página de vendas para curso online com alta taxa de conversão."
-          },
-          {
-               id: 16,
-               title: "App Fitness Tracker",
-               category: "mobile",
-               categoryName: "Mobile Design",
-               image: "https://images.pexels.com/photos/607812/pexels-photo-607812.jpeg?auto=compress&cs=tinysrgb&w=800",
-               date: "2024-09-30",
-               location: "Belo Horizonte, MG",
-               description: "Interface para aplicativo de acompanhamento fitness e nutrição."
-          },
-          {
-               id: 17,
-               title: "Sistema CRM Empresarial",
-               category: "webapp",
-               categoryName: "Web App",
-               image: "https://images.pexels.com/photos/574077/pexels-photo-574077.jpeg?auto=compress&cs=tinysrgb&w=800",
-               date: "2024-09-25",
-               location: "São Paulo, SP",
-               description: "Sistema de gestão de relacionamento com cliente para empresas."
-          },
-          {
-               id: 18,
-               title: "UI Library Components",
-               category: "designsystem",
-               categoryName: "Design System",
-               image: "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=800",
-               date: "2024-09-20",
-               location: "Florianópolis, SC",
-               description: "Biblioteca de componentes UI reutilizáveis para equipes de desenvolvimento."
           }
      ];
 
@@ -332,25 +196,31 @@ const Home: React.FC = () => {
                id: 1,
                title: "E-commerce TechStore",
                category: "E-commerce",
+               categoryName: "E-commerce",
                image: "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800",
                date: "2025-01-15",
-               location: "São Paulo, SP"
+               location: "São Paulo, SP",
+               description: "Plataforma completa de e-commerce com design responsivo e UX otimizada para conversão."
           },
           {
                id: 2,
                title: "Dashboard Analytics Pro",
                category: "Aplicativo Web",
+               categoryName: "Web App",
                image: "https://images.pexels.com/photos/574077/pexels-photo-574077.jpeg?auto=compress&cs=tinysrgb&w=800",
                date: "2025-01-12",
-               location: "Rio de Janeiro, RJ"
+               location: "Rio de Janeiro, RJ",
+               description: "Interface moderna para dashboard de analytics com visualização de dados em tempo real."
           },
           {
                id: 3,
                title: "Landing Page StartupX",
                category: "Landing Page",
+               categoryName: "Landing Page",
                image: "https://images.pexels.com/photos/265667/pexels-photo-265667.jpeg?auto=compress&cs=tinysrgb&w=800",
                date: "2025-01-10",
-               location: "Belo Horizonte, MG"
+               location: "Belo Horizonte, MG",
+               description: "Website institucional com design system completo e experiência de usuário premium."
           }
      ];
 
@@ -456,7 +326,7 @@ const Home: React.FC = () => {
                     <div
                          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
                          style={{
-                              backgroundImage: "url('/meuWebPortfolio/images/IMG5.png')"
+                              backgroundImage: "url('https://static.lumi.new/9d/9de5696f554d06553d71ba174b954c2b.svg')"
                          }}
                     >
                          <div className="absolute inset-0 bg-black/40"></div>
@@ -573,7 +443,7 @@ const Home: React.FC = () => {
                          </div>
                     </section>
 
-                    {/* Featured Works - MOVIDO PARA CIMA */}
+                    {/* Featured Works - PADRONIZADO COM PORTFOLIO */}
                     <section className="mb-20">
                          <motion.div
                               initial={{ opacity: 0, y: 20 }}
@@ -596,49 +466,59 @@ const Home: React.FC = () => {
                                         className="grid grid-cols-1 lg:grid-cols-3 gap-8"
                                    >
                                         {row.map((work, cardIndex) => (
-                                             <motion.article
+                                             <motion.div
                                                   key={work.id}
                                                   custom={cardIndex}
                                                   variants={cardVariants}
-                                                  whileHover={{ scale: 1.02 }}
-                                                  className="neu-card overflow-hidden group cursor-pointer"
+                                                  whileHover={{
+                                                       scale: 1.02,
+                                                       transition: { duration: 0.2 }
+                                                  }}
+                                                  className="neu-card overflow-hidden group"
+                                                  style={{
+                                                       backgroundColor: '#EBF1FC'
+                                                  }}
                                              >
-                                                  <div className="relative h-80 overflow-hidden">
-                                                       <img
-                                                            src={work.image}
-                                                            alt={work.title}
-                                                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                                                       />
-                                                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                                                  </div>
-                                                  <div className="p-6">
-                                                       <div className="flex items-center justify-between mb-3">
-                                                            <span className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium shadow-sm">
-                                                                 {work.category}
-                                                            </span>
-                                                            <div className="flex items-center text-gray-600 text-sm">
-                                                                 <MapPin className="w-4 h-4 mr-1" />
-                                                                 {work.location}
+                                                  <Link to={`/project/${work.id}`}>
+                                                       {/* Image */}
+                                                       <div className="relative h-64 overflow-hidden">
+                                                            <img
+                                                                 src={work.image}
+                                                                 alt={work.title}
+                                                                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                                            />
+                                                            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+                                                            {/* Category Badge */}
+                                                            <div className="absolute top-4 left-4 px-3 py-1 text-sm font-medium text-gray-700 bg-white bg-opacity-90 rounded-lg shadow-sm">
+                                                                 {work.categoryName}
                                                             </div>
                                                        </div>
-                                                       <h3 className="text-xl font-bold text-gray-800 mb-3">{work.title}</h3>
-                                                       <div className="flex items-center justify-between">
-                                                            <div className="flex items-center text-gray-600 text-sm">
-                                                                 <Calendar className="w-4 h-4 mr-1" />
-                                                                 {new Date(work.date).toLocaleDateString('pt-BR')}
+
+                                                       {/* Content */}
+                                                       <div className="p-6">
+                                                            <h3 className="text-xl font-bold mb-3 group-hover:text-cyan-500 transition-colors duration-300 text-gray-700">
+                                                                 {work.title}
+                                                            </h3>
+
+                                                            <p className="mb-4 leading-relaxed text-gray-600">
+                                                                 {work.description}
+                                                            </p>
+
+                                                            {/* Meta Info */}
+                                                            <div className="flex items-center justify-between text-sm">
+                                                                 <div className="flex items-center text-gray-500">
+                                                                      <Calendar className="w-4 h-4 mr-2" />
+                                                                      {new Date(work.date).toLocaleDateString('pt-BR')}
+                                                                 </div>
+                                                                 <div className="flex items-center text-gray-500">
+                                                                      <MapPin className="w-4 h-4 mr-2" />
+                                                                      {work.location}
+                                                                 </div>
                                                             </div>
-                                                            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                                                                 <Link
-                                                                      to={`/post/${work.id}`}
-                                                                      className="neu-button px-4 py-2 text-sm font-medium text-gray-800 inline-flex items-center space-x-1"
-                                                                 >
-                                                                      <span>Ver Mais</span>
-                                                                      <ArrowRight className="w-3 h-3" />
-                                                                 </Link>
-                                                            </motion.div>
                                                        </div>
-                                                  </div>
-                                             </motion.article>
+                                                  </Link>
+                                             </motion.div>
                                         ))}
                                    </motion.div>
                               ))}

@@ -293,7 +293,7 @@ const Portfolio: React.FC = () => {
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, y: -10, scale: 0.95 }}
                   transition={{ duration: 0.2 }}
-                  className="absolute top-full left-0 right-0 mt-2 neu-card bg-[#EBF1FC] rounded-xl shadow-lg z-50 overflow-hidden"
+                  className="absolute top-4 right-4 z-10 bg-white bg-opacity-20 text-white p-2 rounded"
                 >
                   {categories.map((category, index) => (
                     <motion.button
@@ -372,7 +372,7 @@ const Portfolio: React.FC = () => {
                         alt={project.title}
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      <div className="absolute top-4 right-4 z-10 bg-white bg-opacity-20 text-white p-2 rounded" />
                       
                       {/* Category Badge */}
                       <div className="absolute top-4 left-4 px-3 py-1 text-sm font-medium text-gray-700 bg-white bg-opacity-90 rounded-lg shadow-sm">
