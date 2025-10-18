@@ -345,11 +345,21 @@ const Home: React.FC = () => {
                               transition={{ duration: 0.8, delay: 0.7 }}
                               className="text-6xl md:text-8xl font-black mb-6 leading-tight"
                          >
-                              <span className="text-cyan-400">JXCODER</span>
+                              <span className="text-white leading-none">
+                                   JXCODER
+                              </span>
                               <br />
-                              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-300 font-black">
+                              <span
+                                   className="text-transparent bg-clip-text font-black"
+                                   style={{
+                                        backgroundImage: 'linear-gradient(to right, #22d3ee 80%, #5A71F3 110%)'
+                                   }}
+                              >
                                    WEB STUDIO
                               </span>
+
+
+
                          </motion.h1>
 
                          <motion.p
