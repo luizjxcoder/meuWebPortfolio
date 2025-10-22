@@ -345,21 +345,11 @@ const Home: React.FC = () => {
                               transition={{ duration: 0.8, delay: 0.7 }}
                               className="text-6xl md:text-8xl font-black mb-6 leading-tight"
                          >
-                              <span className="text-white leading-none">
-                                   JXCODER
-                              </span>
+                              <span className="text-cyan-400">JXCODER</span>
                               <br />
-                              <span
-                                   className="text-transparent bg-clip-text font-black"
-                                   style={{
-                                        backgroundImage: 'linear-gradient(to right, #22d3ee 80%, #5A71F3 110%)'
-                                   }}
-                              >
+                              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-300 font-black">
                                    WEB STUDIO
                               </span>
-
-
-
                          </motion.h1>
 
                          <motion.p
@@ -507,7 +497,7 @@ const Home: React.FC = () => {
 
                                                        {/* Content */}
                                                        <div className="p-6">
-                                                            <h3 className="text-xl font-bold mb-3 group-hover:text-cyan-500 transition-colors duration-300 text-gray-700">
+                                                            <h3 className="text-xl font-bold mb-3 group-hover:bg-gradient-to-r group-hover:from-[#262626] group-hover:to-cyan-400 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300 text-gray-700">
                                                                  {work.title}
                                                             </h3>
 
