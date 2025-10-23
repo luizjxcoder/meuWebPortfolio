@@ -332,61 +332,100 @@ const Home: React.FC = () => {
                          <div className="absolute inset-0 bg-black/40"></div>
                     </div>
 
+                    {/* Textos Verticais */}
+                    {/* Texto Esquerdo */}
+                    <motion.div
+                         initial={{ opacity: 0, x: -30 }}
+                         animate={{ opacity: 1, x: 0 }}
+                         transition={{ duration: 1, delay: 0.3 }}
+                         className="absolute left-4 md:left-8 top-1/2 transform -translate-y-1/2 z-10"
+                    >
+                         <div
+                              className="text-white/60 text-sm font-medium tracking-widest"
+                              style={{
+                                   writingMode: 'vertical-rl',
+                                   textOrientation: 'mixed'
+                              }}
+                         >
+                              DESENVOLVIMENTO WEB
+                         </div>
+                    </motion.div>
+
+                    {/* Texto Direito */}
+                    <motion.div
+                         initial={{ opacity: 0, x: 30 }}
+                         animate={{ opacity: 1, x: 0 }}
+                         transition={{ duration: 1, delay: 0.3 }}
+                         className="absolute right-4 md:right-8 top-1/2 transform -translate-y-1/2 z-10"
+                    >
+                         <div
+                              className="text-white/60 text-sm font-medium tracking-widest"
+                              style={{
+                                   writingMode: 'vertical-lr',
+                                   textOrientation: 'mixed'
+                              }}
+                         >
+                              DESIGN MODERNO
+                         </div>
+                    </motion.div>
+
                     {/* Hero Content */}
                     <motion.div
                          initial={{ opacity: 0, y: 50 }}
                          animate={{ opacity: 1, y: 0 }}
                          transition={{ duration: 1, delay: 0.5 }}
-                         className="relative z-10 text-center text-white px-6 max-w-4xl mx-auto"
+                         className="relative z-10 text-white px-6 max-w-7xl mx-auto w-full flex items-center justify-center"
                     >
-                         <motion.h1
-                              initial={{ opacity: 0, y: 30 }}
-                              animate={{ opacity: 1, y: 0 }}
-                              transition={{ duration: 0.8, delay: 0.7 }}
-                              className="text-6xl md:text-8xl font-black mb-6 leading-tight"
-                         >
-                              <span className="text-cyan-400">JXCODER</span>
-                              <br />
-                              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-300 font-black">
-                                   WEB STUDIO
-                              </span>
-                         </motion.h1>
+                         <div className="text-left">
+                              <motion.h1
+                                   initial={{ opacity: 0, y: 30 }}
+                                   animate={{ opacity: 1, y: 0 }}
+                                   transition={{ duration: 0.8, delay: 0.7 }}
+                                   className="text-6xl md:text-8xl font-black mb-6 leading-tight"
+                              >
+                                   <span className="text-cyan-400">JXCODER</span>
+                                   <br />
+                                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-300 font-black">
+                                        WEB STUDIO
+                                   </span>
+                              </motion.h1>
 
-                         <motion.p
-                              initial={{ opacity: 0, y: 30 }}
-                              animate={{ opacity: 1, y: 0 }}
-                              transition={{ duration: 0.8, delay: 0.9 }}
-                              className="text-xl md:text-2xl mb-8 text-gray-200 max-w-2xl mx-auto leading-relaxed"
-                         >
-                              Desenvolvedor Web especializado em criar interfaces modernas e funcionais que transformam ideias em projetos digitais de alto impacto.
-                         </motion.p>
+                              <motion.p
+                                   initial={{ opacity: 0, y: 30 }}
+                                   animate={{ opacity: 1, y: 0 }}
+                                   transition={{ duration: 0.8, delay: 0.9 }}
+                                   className="text-xl md:text-2xl mb-8 text-gray-200 max-w-2xl leading-relaxed"
+                              >
+                                   Desenvolvedor Web especializado em criar interfaces modernas e funcionais que transformam ideias em projetos digitais de alto impacto.
+                              </motion.p>
 
-                         <motion.div
-                              initial={{ opacity: 0, y: 30 }}
-                              animate={{ opacity: 1, y: 0 }}
-                              transition={{ duration: 0.8, delay: 1.1 }}
-                              className="flex flex-col sm:flex-row gap-4 justify-center items-center"
-                         >
-                              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                                   <Link
-                                        to="/portfolio"
-                                        className="bg-white text-gray-900 px-8 py-4 rounded-2xl font-semibold text-lg inline-flex items-center space-x-2 shadow-2xl hover:shadow-white/20 transition-all duration-300"
-                                   >
-                                        <Code className="w-5 h-5" />
-                                        <span>Ver Portfólio</span>
-                                   </Link>
+                              <motion.div
+                                   initial={{ opacity: 0, y: 30 }}
+                                   animate={{ opacity: 1, y: 0 }}
+                                   transition={{ duration: 0.8, delay: 1.1 }}
+                                   className="flex flex-col sm:flex-row gap-4 items-center justify-center"
+                              >
+                                   <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                                        <Link
+                                             to="/portfolio"
+                                             className="bg-white text-gray-900 px-8 py-4 rounded-2xl font-semibold text-lg inline-flex items-center space-x-2 shadow-2xl hover:shadow-white/20 transition-all duration-300"
+                                        >
+                                             <Code className="w-5 h-5" />
+                                             <span>Ver Portfólio</span>
+                                        </Link>
+                                   </motion.div>
+
+                                   <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                                        <button
+                                             onClick={scrollToContact}
+                                             className="border-2 border-white text-white px-8 py-4 rounded-2xl font-semibold text-lg inline-flex items-center space-x-2 backdrop-blur-sm bg-white/10 hover:bg-white/20 transition-all duration-300"
+                                        >
+                                             <span>Fale Comigo</span>
+                                             <ArrowRight className="w-5 h-5" />
+                                        </button>
+                                   </motion.div>
                               </motion.div>
-
-                              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                                   <button
-                                        onClick={scrollToContact}
-                                        className="border-2 border-white text-white px-8 py-4 rounded-2xl font-semibold text-lg inline-flex items-center space-x-2 backdrop-blur-sm bg-white/10 hover:bg-white/20 transition-all duration-300"
-                                   >
-                                        <span>Fale Comigo</span>
-                                        <ArrowRight className="w-5 h-5" />
-                                   </button>
-                              </motion.div>
-                         </motion.div>
+                         </div>
                     </motion.div>
 
                     {/* Scroll Indicator */}
