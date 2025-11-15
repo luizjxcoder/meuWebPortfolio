@@ -41,7 +41,7 @@ const Home: React.FC = () => {
                formDataToSend.append('_captcha', 'false');
                formDataToSend.append('_template', 'table');
 
-               const response = await fetch('https://formsubmit.co/jxcpder.dev@gmail.com', {
+               const response = await fetch('https://formsubmit.co/jxcoder.dev@gmail.com', {
                     method: 'POST',
                     body: formDataToSend
                });
@@ -350,7 +350,7 @@ const Home: React.FC = () => {
                     <div
                          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
                          style={{
-                              backgroundImage: "url('./public/images/hero4.png')"
+                              backgroundImage: "url('/images/hero4.png')"
                          }}
                     >
                          <div className="absolute inset-0 bg-black/40"></div>
