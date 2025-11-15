@@ -417,21 +417,12 @@ const Home: React.FC = () => {
                                    transition={{ duration: 0.8, delay: 0.7 }}
                                    className="text-6xl md:text-8xl font-black mb-6 leading-tight"
                               >
-                                   <span
-                                        className="text-transparent bg-clip-text"
-                                        style={{
-                                             backgroundImage:
-                                                  "linear-gradient(to right, #ffffff 0%, #EBEDF2 90%)",
-                                        }}
-                                   >
-                                        JXCODER
-                                   </span>
-
+                                   <span className="text-white">JXCODER</span>
                                    <br />
                                    <span
                                         className="text-transparent bg-clip-text font-black"
                                         style={{
-                                             backgroundImage: 'linear-gradient(to right, #00D5FF 0%, #00D5FF 50%, #3F32A7 99%)'
+                                             backgroundImage: 'linear-gradient(to right, #00D5FF 0%, #00D5FF 70%, #4D0C92 100%)'
                                         }}
                                    >
                                         WEB STUDIO
@@ -722,10 +713,6 @@ const Home: React.FC = () => {
                                                   className="w-1/2 flex-shrink-0 px-6 py-8"
                                              >
                                                   <motion.div
-                                                       initial={{ opacity: 0, y: 30 }}
-                                                       whileInView={{ opacity: 1, y: 0 }}
-                                                       viewport={{ once: true }}
-                                                       transition={{ duration: 0.6 }}
                                                        whileHover={{
                                                             scale: 1.02,
                                                             transition: { duration: 0.2 }
@@ -838,7 +825,7 @@ const Home: React.FC = () => {
                               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                                    <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                                         <a
-                                             href="tel:+5512 991705830"
+                                             href="tel:+5512991705830"
                                              className="neu-button px-8 py-4 font-semibold text-gray-800 inline-flex items-center space-x-2 relative group focus:outline-none"
                                              style={{
                                                   border: 'none'
@@ -854,7 +841,7 @@ const Home: React.FC = () => {
                                                   }}
                                              />
                                              <Phone className="w-5 h-5 relative z-10" />
-                                             <span className="relative z-10">(11) 99999-9999</span>
+                                             <span className="relative z-10">(12) 12991705830</span>
                                         </a>
                                    </motion.div>
 
@@ -1072,11 +1059,11 @@ const Home: React.FC = () => {
                                              <div className="text-sm text-red-600">
                                                   💡 Alternativa: Entre em contato diretamente pelo e-mail{' '}
                                                   <a href="mailto:jxcpder.dev@gmail.com" className="font-semibold underline hover:text-red-800">
-                                                       jxcpder.dev@gmail.com
+                                                       jxcoder.dev@gmail.com
                                                   </a>{' '}
                                                   ou telefone{' '}
                                                   <a href="tel:+5511999999999" className="font-semibold underline hover:text-red-800">
-                                                       (11) 99999-9999
+                                                       (12) 991705830
                                                   </a>
                                              </div>
                                         </motion.div>
