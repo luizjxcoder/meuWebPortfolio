@@ -39,7 +39,7 @@ const Footer: React.FC = () => {
           },
           {
                icon: LayoutDashboard,
-               href: "https://bento.me/jxcoder",
+               href: "https://bento.me/jxcoder-dev",
                label: "Bento.me",
                color: "hover:text-purple-600"
           }

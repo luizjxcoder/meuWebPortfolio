@@ -34,7 +34,7 @@ const Header: React.FC = () => {
      };
 
      const handleBentoClick = () => {
-          window.open('https://bento.me/jxcoder', '_blank');
+          window.open('https://bento.me/jxcoder-dev', '_blank');
      };
 
      return (
