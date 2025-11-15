@@ -350,7 +350,7 @@ const Home: React.FC = () => {
                     <div
                          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
                          style={{
-                              backgroundImage: "url('https://cdn-static-lumi.artvibe.ai/88/88de9d0b9c2d33d8f1571a13eff5a822.webp')"
+                              backgroundImage: "url('./public/images/hero4.png')"
                          }}
                     >
                          <div className="absolute inset-0 bg-black/40"></div>
