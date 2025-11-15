@@ -399,7 +399,7 @@ const Home: React.FC = () => {
 
                               }}
                          >
-                              DESIGN MODERNO
+                              UX/UI DESIGN
                          </div>
                     </motion.div>
 
