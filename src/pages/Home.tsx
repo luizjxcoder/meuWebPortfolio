@@ -41,7 +41,7 @@ const Home: React.FC = () => {
                formDataToSend.append('_captcha', 'false');
                formDataToSend.append('_template', 'table');
 
-               const response = await fetch('https://formsubmit.co/jxcoder.dev@gmail.com', {
+               const response = await fetch('https://formsubmit.co/jxcpder.dev@gmail.com', {
                     method: 'POST',
                     body: formDataToSend
                });
@@ -291,18 +291,22 @@ const Home: React.FC = () => {
           achievementRows.push(achievements.slice(i, i + 4));
      }
 
-     // Funções de navegação dos depoimentos - navegação por pares
+     // Funções de navegação dos depoimentos - navegação adaptativa (1 em mobile, 2 em desktop)
      const nextTestimonial = () => {
           setCurrentTestimonial((prev) => {
-               const nextIndex = prev + 2;
+               const isMobile = window.innerWidth < 768;
+               const increment = isMobile ? 1 : 2;
+               const nextIndex = prev + increment;
                return nextIndex >= testimonials.length ? 0 : nextIndex;
           });
      };
 
      const prevTestimonial = () => {
           setCurrentTestimonial((prev) => {
-               const prevIndex = prev - 2;
-               return prevIndex < 0 ? Math.max(0, testimonials.length - 2) : prevIndex;
+               const isMobile = window.innerWidth < 768;
+               const increment = isMobile ? 1 : 2;
+               const prevIndex = prev - increment;
+               return prevIndex < 0 ? Math.max(0, testimonials.length - increment) : prevIndex;
           });
      };
 
@@ -346,11 +350,21 @@ const Home: React.FC = () => {
           <div className="min-h-screen">
                {/* Hero Section with Background Image */}
                <section className="relative h-screen flex items-center justify-center overflow-hidden">
-                    {/* Background Image */}
+                    {/* Background Image - Desktop */}
                     <div
-                         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                         className="hidden md:block absolute inset-0 bg-cover bg-center bg-no-repeat"
                          style={{
-                              backgroundImage: "url('/meuWebPortfolio/images/hero4.png')"
+                              backgroundImage: "url('https://cdn-static-lumi.artvibe.ai/cd/cdab3c573251c4acd1b82874327d028d.webp')"
+                         }}
+                    >
+                         <div className="absolute inset-0 bg-black/40"></div>
+                    </div>
+
+                    {/* Background Image - Mobile */}
+                    <div
+                         className="md:hidden absolute inset-0 bg-cover bg-center bg-no-repeat"
+                         style={{
+                              backgroundImage: "url('https://cdn-static-lumi.artvibe.ai/88/88de9d0b9c2d33d8f1571a13eff5a822.webp')"
                          }}
                     >
                          <div className="absolute inset-0 bg-black/40"></div>
@@ -362,44 +376,36 @@ const Home: React.FC = () => {
                          initial={{ opacity: 0, x: -30 }}
                          animate={{ opacity: 1, x: 0 }}
                          transition={{ duration: 1, delay: 0.3 }}
-                         className="absolute left-4 md:left-8 inset-y-0 flex items-center z-10"
-
+                         className="absolute left-4 md:left-8 top-1/2 md:top-1/2 transform md:-translate-y-1/2 z-10"
+                         style={{ top: 'calc(50% + 80px)' }}
                     >
                          <div
                               className="text-white/60 text-sm font-medium tracking-widest"
                               style={{
                                    writingMode: 'vertical-rl',
-                                   textOrientation: 'mixed',
-                                   transform: 'rotate(180deg)',
-                                   fontSize: '20px'
-
+                                   textOrientation: 'mixed'
                               }}
                          >
                               DESENVOLVIMENTO WEB
                          </div>
                     </motion.div>
 
-
-
                     {/* Texto Direito */}
                     <motion.div
                          initial={{ opacity: 0, x: 30 }}
                          animate={{ opacity: 1, x: 0 }}
                          transition={{ duration: 1, delay: 0.3 }}
-                         className="absolute inset-y-0 right-4 md:right-8 flex items-center z-10"
-
-
+                         className="absolute right-4 md:right-8 top-1/2 md:top-1/2 transform md:-translate-y-1/2 z-10"
+                         style={{ top: 'calc(50% - 80px)' }}
                     >
                          <div
                               className="text-white/60 text-sm font-medium tracking-widest"
                               style={{
                                    writingMode: 'vertical-lr',
-                                   textOrientation: 'mixed',
-                                   fontSize: '20px'
-
+                                   textOrientation: 'mixed'
                               }}
                          >
-                              UX/UI DESIGN
+                              DESIGN MODERNO
                          </div>
                     </motion.div>
 
@@ -704,13 +710,15 @@ const Home: React.FC = () => {
                                    <motion.div
                                         className="flex transition-transform duration-500 ease-out"
                                         style={{
-                                             transform: `translateX(-${currentTestimonial * 50}%)`,
+                                             transform: window.innerWidth < 768
+                                                  ? `translateX(-${currentTestimonial * 100}%)`
+                                                  : `translateX(-${currentTestimonial * 50}%)`,
                                         }}
                                    >
                                         {testimonials.map((testimonial, index) => (
                                              <div
                                                   key={index}
-                                                  className="w-1/2 flex-shrink-0 px-6 py-8"
+                                                  className="w-full md:w-1/2 flex-shrink-0 px-4 md:px-6 py-8"
                                              >
                                                   <motion.div
                                                        whileHover={{
@@ -769,11 +777,11 @@ const Home: React.FC = () => {
 
                                    {/* Indicador de Página Atual */}
                                    <div className="flex items-center space-x-3">
-                                        {Array.from({ length: Math.ceil(testimonials.length / 2) }, (_, index) => (
+                                        {Array.from({ length: window.innerWidth < 768 ? testimonials.length : Math.ceil(testimonials.length / 2) }, (_, index) => (
                                              <button
                                                   key={index}
-                                                  onClick={() => setCurrentTestimonial(index * 2)}
-                                                  className={`transition-all duration-300 ${Math.floor(currentTestimonial / 2) === index
+                                                  onClick={() => setCurrentTestimonial(window.innerWidth < 768 ? index : index * 2)}
+                                                  className={`transition-all duration-300 ${(window.innerWidth < 768 ? currentTestimonial === index : Math.floor(currentTestimonial / 2) === index)
                                                        ? 'w-12 h-3 bg-gray-700 rounded-full'
                                                        : 'w-3 h-3 bg-gray-300 rounded-full hover:bg-gray-500'
                                                        }`}
@@ -825,7 +833,7 @@ const Home: React.FC = () => {
                               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                                    <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                                         <a
-                                             href="tel:+5512991705830"
+                                             href="tel:+5511999999999"
                                              className="neu-button px-8 py-4 font-semibold text-gray-800 inline-flex items-center space-x-2 relative group focus:outline-none"
                                              style={{
                                                   border: 'none'
@@ -841,7 +849,7 @@ const Home: React.FC = () => {
                                                   }}
                                              />
                                              <Phone className="w-5 h-5 relative z-10" />
-                                             <span className="relative z-10">(12) 12991705830</span>
+                                             <span className="relative z-10">(11) 99999-9999</span>
                                         </a>
                                    </motion.div>
 
@@ -863,7 +871,7 @@ const Home: React.FC = () => {
                                                   }}
                                              />
                                              <Mail className="w-5 h-5 relative z-10" />
-                                             <span className="relative z-10">jxcoder.dev@gmail.com</span>
+                                             <span className="relative z-10">jxcpder.dev@gmail.com</span>
                                         </a>
                                    </motion.div>
                               </div>
@@ -1059,11 +1067,11 @@ const Home: React.FC = () => {
                                              <div className="text-sm text-red-600">
                                                   💡 Alternativa: Entre em contato diretamente pelo e-mail{' '}
                                                   <a href="mailto:jxcpder.dev@gmail.com" className="font-semibold underline hover:text-red-800">
-                                                       jxcoder.dev@gmail.com
+                                                       jxcpder.dev@gmail.com
                                                   </a>{' '}
                                                   ou telefone{' '}
                                                   <a href="tel:+5511999999999" className="font-semibold underline hover:text-red-800">
-                                                       (12) 991705830
+                                                       (11) 99999-9999
                                                   </a>
                                              </div>
                                         </motion.div>

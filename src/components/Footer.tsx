@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Instagram, Twitter, Mail, Phone, LayoutDashboard } from 'lucide-react';
+import { Github, Linkedin, Instagram, Twitter, Mail, Phone, ExternalLink } from 'lucide-react';
 
 const Footer: React.FC = () => {
 
@@ -38,8 +38,8 @@ const Footer: React.FC = () => {
                color: "hover:text-red-500"
           },
           {
-               icon: LayoutDashboard,
-               href: "https://bento.me/jxcoder-dev",
+               icon: ExternalLink,
+               href: "https://bento.me/jxcoder",
                label: "Bento.me",
                color: "hover:text-purple-600"
           }
@@ -99,28 +99,30 @@ const Footer: React.FC = () => {
                          {/* Social Media Buttons */}
                          <motion.div
                               variants={itemVariants}
-                              className="flex justify-center items-center space-x-6 mb-8"
+                              className="mb-8"
                          >
-                              {socialLinks.map((social, index) => (
-                                   <motion.a
-                                        key={index}
-                                        href={social.href}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className={`neu-card p-4 transition-all duration-300 hover:scale-110 hover:shadow-lg text-gray-600 ${social.color}`}
-                                        style={{
-                                             backgroundColor: '#EBF1FC'
-                                        }}
-                                        whileHover={{
-                                             scale: 1.1,
-                                             boxShadow: "0 10px 25px rgba(0,0,0,0.1)"
-                                        }}
-                                        whileTap={{ scale: 0.95 }}
-                                        aria-label={social.label}
-                                   >
-                                        <social.icon className="w-6 h-6" />
-                                   </motion.a>
-                              ))}
+                              <div className="flex flex-wrap justify-center items-center gap-4 max-w-md mx-auto">
+                                   {socialLinks.map((social, index) => (
+                                        <motion.a
+                                             key={index}
+                                             href={social.href}
+                                             target="_blank"
+                                             rel="noopener noreferrer"
+                                             className={`neu-card p-4 transition-all duration-300 hover:scale-110 hover:shadow-lg text-gray-600 ${social.color}`}
+                                             style={{
+                                                  backgroundColor: '#EBF1FC'
+                                             }}
+                                             whileHover={{
+                                                  scale: 1.1,
+                                                  boxShadow: "0 10px 25px rgba(0,0,0,0.1)"
+                                             }}
+                                             whileTap={{ scale: 0.95 }}
+                                             aria-label={social.label}
+                                        >
+                                             <social.icon className="w-6 h-6" />
+                                        </motion.a>
+                                   ))}
+                              </div>
                          </motion.div>
 
                          {/* Contact Info */}
