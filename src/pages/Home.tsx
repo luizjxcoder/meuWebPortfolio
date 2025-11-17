@@ -376,17 +376,17 @@ const Home: React.FC = () => {
                          initial={{ opacity: 0, x: -30 }}
                          animate={{ opacity: 1, x: 0 }}
                          transition={{ duration: 1, delay: 0.3 }}
-                         className="absolute left-4 md:left-8 top-1/2 md:top-1/2 transform md:-translate-y-1/2 z-10"
-                         style={{ top: 'calc(50% + 80px)' }}
+                         className="absolute left-4 md:left-8 top-[calc(50%+140px)] md:top-1/3 transform -translate-y-1/2 z-10"
                     >
                          <div
                               className="text-white/60 text-sm font-medium tracking-widest"
                               style={{
                                    writingMode: 'vertical-rl',
-                                   textOrientation: 'mixed'
+                                   textOrientation: 'mixed',
+                                   transform: 'rotate(180deg)'
                               }}
                          >
-                              DESENVOLVIMENTO WEB
+                              DESENVOLVIMENTO DE SISTEMAS
                          </div>
                     </motion.div>
 
@@ -395,8 +395,7 @@ const Home: React.FC = () => {
                          initial={{ opacity: 0, x: 30 }}
                          animate={{ opacity: 1, x: 0 }}
                          transition={{ duration: 1, delay: 0.3 }}
-                         className="absolute right-4 md:right-8 top-1/2 md:top-1/2 transform md:-translate-y-1/2 z-10"
-                         style={{ top: 'calc(50% - 80px)' }}
+                         className="absolute right-4 md:right-8 top-[calc(50%-250px)] md:top-1/3 transform -translate-y-1/2 z-10"
                     >
                          <div
                               className="text-white/60 text-sm font-medium tracking-widest"
@@ -405,9 +404,10 @@ const Home: React.FC = () => {
                                    textOrientation: 'mixed'
                               }}
                          >
-                              DESIGN MODERNO
+                              CRIAÇÃO DE SÍTES MODERNOS
                          </div>
                     </motion.div>
+
 
                     {/* Hero Content */}
                     <motion.div
@@ -417,6 +417,23 @@ const Home: React.FC = () => {
                          className="relative z-10 text-white px-6 max-w-7xl mx-auto w-full flex items-center justify-center"
                     >
                          <div className="text-left">
+
+                              {/* Detalhe acima do título — CORRETO E RESPONSIVO */}
+                              <div className="flex items-center gap-3 mb-6">
+                                   <span
+                                        className="h-[2px] w-12 rounded-full block"
+                                        style={{
+                                             background:
+                                                  "linear-gradient(90deg, #00D5FF 40%, #4B1195 100%)",
+                                        }}
+                                   ></span>
+
+                                   <span className="text-sm md:text-base font-semibold tracking-wider text-white uppercase">
+                                        Web Designer • UX/UI Designer
+                                   </span>
+                              </div>
+
+                              {/* Título */}
                               <motion.h1
                                    initial={{ opacity: 0, y: 30 }}
                                    animate={{ opacity: 1, y: 0 }}
@@ -428,20 +445,23 @@ const Home: React.FC = () => {
                                    <span
                                         className="text-transparent bg-clip-text font-black"
                                         style={{
-                                             backgroundImage: 'linear-gradient(to right, #00D5FF 0%, #00D5FF 70%, #4D0C92 100%)'
+                                             backgroundImage:
+                                                  "linear-gradient(to right, #00D5FF 0%, #00D5FF 70%, #4D0C92 100%)",
                                         }}
                                    >
                                         WEB STUDIO
                                    </span>
                               </motion.h1>
 
+                              {/* Descrição */}
                               <motion.p
                                    initial={{ opacity: 0, y: 30 }}
                                    animate={{ opacity: 1, y: 0 }}
                                    transition={{ duration: 0.8, delay: 0.9 }}
                                    className="text-xl md:text-2xl mb-8 text-gray-200 max-w-2xl leading-relaxed"
                               >
-                                   Desenvolvedor Web especializado em criar interfaces modernas e funcionais que transformam ideias em projetos digitais de alto impacto.
+                                   Desenvolvedor Web especializado em criar interfaces modernas e funcionais
+                                   que transformam ideias em projetos digitais de alto impacto.
                               </motion.p>
 
                               <motion.div
