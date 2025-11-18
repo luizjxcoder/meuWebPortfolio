@@ -376,17 +376,19 @@ const Home: React.FC = () => {
                          initial={{ opacity: 0, x: -30 }}
                          animate={{ opacity: 1, x: 0 }}
                          transition={{ duration: 1, delay: 0.3 }}
-                         className="absolute left-4 md:left-8 top-[calc(50%+140px)] md:top-1/3 transform -translate-y-1/2 z-10"
+                         className="absolute left-4 md:left-8 top-[calc(50%+130px)] md:top-1/3 transform -translate-y-1/2 z-10"
                     >
                          <div
                               className="text-white/60 text-sm font-medium tracking-widest"
                               style={{
+                                   backgroundImage: "linear-gradient(40deg, #26292A 40%, #00D5FF 90%)",
+                                   WebkitBackgroundClip: "text",
                                    writingMode: 'vertical-rl',
                                    textOrientation: 'mixed',
                                    transform: 'rotate(180deg)'
                               }}
                          >
-                              DESENVOLVIMENTO DE SISTEMAS
+                              CRIAÇÃO DE SÍTES MODERNOS
                          </div>
                     </motion.div>
 
@@ -395,16 +397,18 @@ const Home: React.FC = () => {
                          initial={{ opacity: 0, x: 30 }}
                          animate={{ opacity: 1, x: 0 }}
                          transition={{ duration: 1, delay: 0.3 }}
-                         className="absolute right-4 md:right-8 top-[calc(50%-250px)] md:top-1/3 transform -translate-y-1/2 z-10"
+                         className="absolute right-4 md:right-8 top-[calc(50%-285px)] md:top-1/3 transform -translate-y-1/2 z-10"
                     >
                          <div
                               className="text-white/60 text-sm font-medium tracking-widest"
                               style={{
+                                   backgroundImage: "linear-gradient(40deg, #26292A 40%, #00D5FF 90%)",
+                                   WebkitBackgroundClip: "text",
                                    writingMode: 'vertical-lr',
                                    textOrientation: 'mixed'
                               }}
                          >
-                              CRIAÇÃO DE SÍTES MODERNOS
+                              DESENVOLVIMENTO DE SISTEMAS
                          </div>
                     </motion.div>
 
@@ -419,7 +423,7 @@ const Home: React.FC = () => {
                          <div className="text-left">
 
                               {/* Detalhe acima do título — CORRETO E RESPONSIVO */}
-                              <div className="flex items-center gap-3 mb-6">
+                              <div className="flex items-center gap-3 mb-2">
                                    <span
                                         className="h-[2px] w-12 rounded-full block"
                                         style={{
