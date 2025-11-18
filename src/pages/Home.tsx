@@ -354,7 +354,7 @@ const Home: React.FC = () => {
                     <div
                          className="hidden md:block absolute inset-0 bg-cover bg-center bg-no-repeat"
                          style={{
-                              backgroundImage: "url('https://cdn-static-lumi.artvibe.ai/cd/cdab3c573251c4acd1b82874327d028d.webp')"
+                              backgroundImage: "url('/meuWebPortfolio/images/hero4.png')"
                          }}
                     >
                          <div className="absolute inset-0 bg-black/40"></div>
@@ -364,7 +364,7 @@ const Home: React.FC = () => {
                     <div
                          className="md:hidden absolute inset-0 bg-cover bg-center bg-no-repeat"
                          style={{
-                              backgroundImage: "url('https://cdn-static-lumi.artvibe.ai/88/88de9d0b9c2d33d8f1571a13eff5a822.webp')"
+                              backgroundImage: "url('meuWebPortfolio/images/hero2.png')"
                          }}
                     >
                          <div className="absolute inset-0 bg-black/40"></div>
