@@ -531,7 +531,7 @@ const Home: React.FC = () => {
                </section>
 
                {/* Main Content */}
-               <div className="max-w-7xl mx-auto px-6 py-16" style={{ backgroundColor: 'var(--bg-color)' }}>
+               <div className="max-w-7xl mx-auto px-8 md:px-6 py-16" style={{ backgroundColor: 'var(--bg-color)' }}>
 
                     {/* Achievements Section */}
                     <section className="mb-20">
@@ -654,7 +654,7 @@ const Home: React.FC = () => {
                               transition={{ duration: 0.6 }}
                          >
                               <h2 className="text-4xl font-bold text-gray-800 mb-4 text-center">Especialidades</h2>
-                              <p className="text-xl text-gray-700 mb-12 text-center max-w-3xl mx-auto">
+                              <p className="text-xl text-gray-700 mb-12 text-center text-justify max-w-3xl mx-auto">
                                    Cada especialidade representa uma paixão única, onde código e design se encontram
                                    para criar experiências digitais que conectam marcas e usuários de forma memorável.
                               </p>
@@ -848,9 +848,9 @@ const Home: React.FC = () => {
                          transition={{ duration: 0.6 }}
                          className="mb-16"
                     >
-                         <div className="neu-card p-12 text-center">
+                         <div className="neu-card p-6 md:p-12 text-center">
                               <h2 className="text-4xl font-bold text-gray-800 mb-6">Vamos Criar Algo Incrível Juntos</h2>
-                              <p className="text-xl text-gray-700 mb-8 max-w-3xl mx-auto">
+                              <p className="text-xl text-gray-700 mb-8 text-justify max-w-3xl mx-auto">
                                    Pronto para transformar sua ideia em realidade digital? Entre em contato e vamos
                                    conversar sobre como posso ajudar a criar a presença online perfeita para seu negócio.
                               </p>
@@ -911,16 +911,16 @@ const Home: React.FC = () => {
                          transition={{ duration: 0.6 }}
                          className="mb-16"
                     >
-                         <div className="neu-card p-12">
-                              <div className="text-center mb-12">
+                         <div className="neu-card p-6 md:p-12">
+                              <div className="text-center mb-8 md:mb-12">
                                    <h2 className="text-4xl font-bold text-gray-800 mb-4">Conte-me Sobre Seu Projeto</h2>
-                                   <p className="text-xl text-gray-700 max-w-2xl mx-auto">
+                                   <p className="text-xl text-gray-700 text-justify max-w-2xl mx-auto">
                                         Preencha o formulário abaixo e receba uma proposta personalizada em até 24 horas.
                                    </p>
                               </div>
 
                               <form onSubmit={handleSubmit} className="max-w-4xl mx-auto">
-                                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-6 md:mb-8">
                                         {/* Nome */}
                                         <motion.div
                                              initial={{ opacity: 0, x: -20 }}
@@ -1024,7 +1024,7 @@ const Home: React.FC = () => {
                                         whileInView={{ opacity: 1, y: 0 }}
                                         viewport={{ once: true }}
                                         transition={{ duration: 0.5, delay: 0.5 }}
-                                        className="mb-8"
+                                        className="mb-6 md:mb-8"
                                    >
                                         <label htmlFor="message" className="block text-gray-800 font-semibold mb-3">
                                              <MessageSquare className="w-5 h-5 inline mr-2" />
