@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Calendar, Clock, ArrowRight, Code, Award, Heart, Users, Star, MapPin, Phone, Mail, Send, User, MessageSquare, Globe, ChevronLeft, ChevronRight, X, Rocket } from 'lucide-react';
+import { Calendar, ArrowRight, Code, Award, Users, Star, MapPin, Phone, Mail, Send, User, MessageSquare, Globe, ChevronLeft, ChevronRight, Rocket } from 'lucide-react';
 
 const Home: React.FC = () => {
      const [formData, setFormData] = useState({
@@ -16,6 +16,11 @@ const Home: React.FC = () => {
      const [isSubmitting, setIsSubmitting] = useState(false);
      const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
      const [currentTestimonial, setCurrentTestimonial] = useState(0);
+
+     // Estados para drag/swipe nos depoimentos
+     const [isDragging, setIsDragging] = useState(false);
+     const [startX, setStartX] = useState(0);
+     const [currentX, setCurrentX] = useState(0);
 
      const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
           const { name, value } = e.target;
@@ -41,7 +46,7 @@ const Home: React.FC = () => {
                formDataToSend.append('_captcha', 'false');
                formDataToSend.append('_template', 'table');
 
-               const response = await fetch('https://formsubmit.co/jxcpder.dev@gmail.com', {
+               const response = await fetch('https://formsubmit.co/jxcoder.dev@gmail.com', {
                     method: 'POST',
                     body: formDataToSend
                });
@@ -310,6 +315,41 @@ const Home: React.FC = () => {
           });
      };
 
+     // CONTROLES DOS CARDS DE TESTEMUNHOS - Handlers para drag/swipe
+     const handleDragStart = (e: React.MouseEvent | React.TouchEvent) => {
+          setIsDragging(true);
+          const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX;
+          setStartX(clientX);
+          setCurrentX(clientX);
+     };
+
+     const handleDragMove = (e: React.MouseEvent | React.TouchEvent) => {
+          if (!isDragging) return;
+          const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX;
+          setCurrentX(clientX);
+     };
+
+     const handleDragEnd = () => {
+          if (!isDragging) return;
+          setIsDragging(false);
+
+          const diff = startX - currentX;
+          const threshold = 50; // Distância mínima para considerar um swipe
+
+          if (Math.abs(diff) > threshold) {
+               if (diff > 0) {
+                    // Swipe para a esquerda - próximo
+                    nextTestimonial();
+               } else {
+                    // Swipe para a direita - anterior
+                    prevTestimonial();
+               }
+          }
+
+          setStartX(0);
+          setCurrentX(0);
+     };
+
      // Variantes de animação para as fileiras
      const rowVariants = {
           hidden: {
@@ -346,6 +386,7 @@ const Home: React.FC = () => {
           })
      };
 
+     //BACKGROUND IMAGE MOBILE AND DESKTOP CONFIG
      return (
           <div className="min-h-screen">
                {/* Hero Section with Background Image */}
@@ -716,7 +757,6 @@ const Home: React.FC = () => {
                               ))}
                          </div>
                     </section>
-
                     {/* Testimonials com 2 Cards Visíveis e Navegação por Setas Abaixo */}
                     <section className="mb-20">
                          <motion.div
@@ -730,13 +770,23 @@ const Home: React.FC = () => {
 
                          <div className="relative py-12">
                               {/* Container com overflow hidden para ocultar cards laterais */}
-                              <div className="overflow-hidden">
+                              <div
+                                   className="overflow-hidden cursor-grab active:cursor-grabbing"
+                                   onMouseDown={handleDragStart}
+                                   onMouseMove={handleDragMove}
+                                   onMouseUp={handleDragEnd}
+                                   onMouseLeave={handleDragEnd}
+                                   onTouchStart={handleDragStart}
+                                   onTouchMove={handleDragMove}
+                                   onTouchEnd={handleDragEnd}
+                              >
                                    <motion.div
                                         className="flex transition-transform duration-500 ease-out"
                                         style={{
                                              transform: window.innerWidth < 768
-                                                  ? `translateX(-${currentTestimonial * 100}%)`
-                                                  : `translateX(-${currentTestimonial * 50}%)`,
+                                                  ? `translateX(calc(-${currentTestimonial * 100}% + ${isDragging ? (currentX - startX) : 0}px))`
+                                                  : `translateX(calc(-${currentTestimonial * 50}% + ${isDragging ? (currentX - startX) : 0}px))`,
+                                             transition: isDragging ? 'none' : 'transform 0.5s ease-out',
                                         }}
                                    >
                                         {testimonials.map((testimonial, index) => (
