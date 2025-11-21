@@ -233,7 +233,7 @@ const Home: React.FC = () => {
      const achievements = [
           { icon: Award, label: "Projetos Entregues", value: `${portfolioProjects.length}+` },
           { icon: Users, label: "Clientes Satisfeitos", value: "80+" },
-          { icon: Code, label: "Linhas de Código", value: "500K+" },
+          { icon: Code, label: "Linhas de Código", value: "5000K+" },
           { icon: Rocket, label: "Anos de Experiência", value: "5+" }
      ];
 
@@ -491,7 +491,7 @@ const Home: React.FC = () => {
                                         className="text-transparent bg-clip-text font-black"
                                         style={{
                                              backgroundImage:
-                                                  "linear-gradient(to right, #00D5FF 0%, #00D5FF 70%, #4D0C92 100%)",
+                                                  "linear-gradient(to right, #00D5FF 0%, #00D5FF 70%, #592073 102%)",
                                         }}
                                    >
                                         WEB STUDIO
@@ -740,10 +740,10 @@ const Home: React.FC = () => {
                                                             </div>
                                                             {/* Hover overlay com indicação de link */}
                                                             <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                                                                 <div className="bg-white/90 backdrop-blur-sm rounded-full px-4 py-2 text-gray-900 font-semibold inline-flex items-center space-x-2">
-                                                                      <Code className="w-4 h-4" />
-                                                                      <span>Ver no Portfólio</span>
-                                                                      <ArrowRight className="w-4 h-4" />
+                                                                 <div className="bg-white/90 backdrop-blur-sm rounded-full px-4 py-2 font-semibold inline-flex items-center space-x-2 hover-gradient-btn active-gradient-btn cursor-pointer">
+                                                                      <Code className="w-4 h-4 text-gray-900" />
+                                                                      <span className="text-gray-900 hover-gradient-text active-gradient-text">Ver no Portfólio</span>
+                                                                      <ArrowRight className="w-4 h-4 text-gray-900" />
                                                                  </div>
                                                             </div>
                                                        </div>
@@ -757,6 +757,7 @@ const Home: React.FC = () => {
                               ))}
                          </div>
                     </section>
+
                     {/* Testimonials com 2 Cards Visíveis e Navegação por Setas Abaixo */}
                     <section className="mb-20">
                          <motion.div
