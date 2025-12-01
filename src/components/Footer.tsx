@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Instagram, Twitter, Mail, Phone, ExternalLink } from 'lucide-react';
+import { Github, Linkedin, Instagram, Twitter, Mail, Phone, LayoutDashboard, AtSign } from 'lucide-react';
 
 const Footer: React.FC = () => {
 
@@ -26,8 +26,8 @@ const Footer: React.FC = () => {
                color: "hover:text-pink-600"
           },
           {
-               icon: Twitter,
-               href: "https://twitter.com/jxcoder",
+               icon: AtSign,
+               href: "https://threads.com/jxcoder",
                label: "Twitter",
                color: "hover:text-blue-400"
           },
@@ -38,7 +38,7 @@ const Footer: React.FC = () => {
                color: "hover:text-red-500"
           },
           {
-               icon: ExternalLink,
+               icon: LayoutDashboard,
                href: "https://bento.me/jxcoder",
                label: "Bento.me",
                color: "hover:text-purple-600"
@@ -136,7 +136,7 @@ const Footer: React.FC = () => {
                                         className="flex items-center space-x-2 transition-colors duration-300 hover:text-gray-800"
                                    >
                                         <Phone className="w-4 h-4" />
-                                        <span>(11) 99999-9999</span>
+                                        <span>(12) 99170-5830</span>
                                    </a>
                                    <a
                                         href="mailto:contato@jxcoder.com"
