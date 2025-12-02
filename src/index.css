@@ -8,7 +8,7 @@
         --shadow-dark: #c8d3e8;
         --text-primary: #2d3748;
         --text-secondary: #4a5568;
-        --accent-color: #00d5ff;
+        --accent-color: #667eea;
 }
 
 * {
@@ -79,8 +79,7 @@ body {
 
 .neu-input:focus {
         box-shadow: inset 8px 8px 16px var(--shadow-dark),
-                inset -8px -8px 16px var(--shadow-light),
-                0 0 0 2px var(--accent-color);
+                inset -8px -8px 16px var(--shadow-light);
 }
 
 .neu-pressed {
@@ -111,14 +110,12 @@ body {
         background: var(--bg-color);
         box-shadow: 4px 4px 8px var(--shadow-dark),
                 -4px -4px 8px var(--shadow-light);
-        color: var(--accent-color);
 }
 
 .neu-nav-link.active {
         background: var(--bg-color);
         box-shadow: inset 3px 3px 6px var(--shadow-dark),
                 inset -3px -3px 6px var(--shadow-light);
-        color: var(--accent-color);
 }
 
 /* Chart Container */
@@ -171,7 +168,6 @@ body {
 .neu-tag:hover {
         box-shadow: 2px 2px 4px var(--shadow-dark),
                 -2px -2px 4px var(--shadow-light);
-        color: var(--accent-color);
 }
 
 /* Image Containers */
@@ -264,12 +260,6 @@ p {
 }
 
 /* Accessibility */
-.neu-button:focus,
-.neu-input:focus,
-.neu-nav-link:focus {
-        outline: 2px solid var(--accent-color);
-        outline-offset: 2px;
-}
 
 /* Hover Gradient Effect for Portfolio Button */
 .hover-gradient-btn:hover .hover-gradient-text,
@@ -279,6 +269,26 @@ p {
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         transition: all 0.3s ease;
+}
+
+/* Gradient border effect for header nav buttons on click */
+.neu-button:active {
+        border: 2px solid transparent;
+        background: linear-gradient(#ebf1fc, #ebf1fc) padding-box,
+                linear-gradient(to right, #262828, #09b6d4) border-box;
+        animation: borderFlash 0.3s ease-in-out;
+}
+
+@keyframes borderFlash {
+        0% {
+                border-width: 0px;
+        }
+        50% {
+                border-width: 2px;
+        }
+        100% {
+                border-width: 2px;
+        }
 }
 
 /* Print Styles */

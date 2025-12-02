@@ -1,12 +1,13 @@
 
 import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Menu, X, MessageCircleDashed as MessageCircle, Mail, Instagram, Github, LayoutDashboard } from 'lucide-react';
 
 const Header: React.FC = () => {
      const [isMenuOpen, setIsMenuOpen] = useState(false);
      const location = useLocation();
+     const navigate = useNavigate();
 
      const navItems = [
           { name: 'Início', path: '/' },
@@ -18,11 +19,11 @@ const Header: React.FC = () => {
      const isActive = (path: string) => location.pathname === path;
 
      const handleWhatsAppClick = () => {
-          window.open('https://wa.me/5511999999999?text=Olá! Gostaria de conversar sobre um projeto.', '_blank');
+          window.open('https://wa.me/5512991705830?text=Olá! Gostaria de conversar sobre um projeto.', '_blank');
      };
 
      const handleEmailClick = () => {
-          window.open('mailto:contato@luizalbertosilva.com?subject=Contato via Site', '_blank');
+          window.open('mailto:jxcoder.dev@hotmail.com?subject=Contato via Site', '_blank');
      };
 
      const handleInstagramClick = () => {
@@ -35,6 +36,12 @@ const Header: React.FC = () => {
 
      const handleBentoClick = () => {
           window.open('https://bento.me/jxcoder-dev', '_blank');
+     };
+
+     const handleLogoClick = (e: React.MouseEvent) => {
+          e.preventDefault();
+          navigate('/');
+          window.scrollTo({ top: 0, behavior: 'smooth' });
      };
 
      return (
@@ -53,7 +60,7 @@ const Header: React.FC = () => {
                               whileHover={{ scale: 1.05 }}
                               whileTap={{ scale: 0.95 }}
                          >
-                              <Link to="/" className="flex items-center space-x-2">
+                              <Link to="/" onClick={handleLogoClick} className="flex items-center space-x-2">
                                    <div className="neu-card p-2">
                                         <img
                                              src="https://static.lumi.new/2e/2e59dbf1291221307100a119eb4d3320.png"
@@ -202,10 +209,13 @@ const Header: React.FC = () => {
                                         <Link
                                              to={item.path}
                                              onClick={() => setIsMenuOpen(false)}
-                                             className={`block px-4 py-2 rounded-xl font-medium transition-all duration-300 ${isActive(item.path)
+                                             className={`block px-4 py-2 rounded-xl font-medium transition-all duration-300 relative ${isActive(item.path)
                                                   ? 'bg-gray-700 text-white shadow-md'
-                                                  : 'neu-button text-gray-700 hover:text-gray-900'
+                                                  : 'neu-button text-gray-700 hover:text-gray-900 active:border-2 active:border-transparent'
                                                   }`}
+                                             style={!isActive(item.path) ? {
+                                                  background: 'linear-gradient(#EBF1FC, #EBF1FC) padding-box, linear-gradient(to right, #09B6D4, #262828) border-box'
+                                             } : undefined}
                                         >
                                              {item.name}
                                         </Link>

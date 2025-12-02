@@ -364,6 +364,9 @@ const ProjectDetail: React.FC = () => {
                          >
                               {/* Project Info */}
                               <div className="neu-card p-6 bg-[#EBF1FC]">
+                                   <h3 className="text-xl font-bold mb-4 text-gray-700">
+                                        Descrição do Projeto
+                                   </h3>
                                    <div className="flex items-center justify-between mb-4">
                                         <div className="flex items-center text-gray-600">
                                              <Calendar className="w-4 h-4 mr-2" />
@@ -372,17 +375,6 @@ const ProjectDetail: React.FC = () => {
                                         <div className="flex items-center text-gray-600">
                                              <MapPin className="w-4 h-4 mr-2" />
                                              {project.location}
-                                        </div>
-                                   </div>
-
-                                   <div className="flex items-center space-x-6 mb-6">
-                                        <div className="flex items-center text-gray-600">
-                                             <Eye className="w-4 h-4 mr-2" />
-                                             {project.views.toLocaleString()} visualizações
-                                        </div>
-                                        <div className="flex items-center text-gray-600">
-                                             <Heart className="w-4 h-4 mr-2" />
-                                             {project.likes} likes
                                         </div>
                                    </div>
 
